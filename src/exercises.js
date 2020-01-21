@@ -40,15 +40,50 @@ function endsMeet(values, n) {
 }
 
 function difference(numbers) {
-  // write your code here
+  if (!numbers || numbers.length < 1 || numbers.some(isNaN)){
+   return undefined;
+   } else {
+   let max = Number(Math.max.apply(null, numbers));
+   let min = Number(Math.min.apply(null, numbers));
+   let diff = max - min;
+   return diff;
+   }
 }
 
 function max(number) {
-  // write your code here
+  if (!number || number.length < 3 || number.some(isNaN) || number.length % 2 == 0) {
+   return undefined;
+   }
+   else {
+   var last = number[number.length - 1];
+   var mid = number[(number.length - 1)/2];
+   var fir = number[0];
+   if(last >= mid && last >= fir) {
+   return last;
+   }
+   else if(mid >= last && mid >= fir) {
+   return mid;
+   }
+   else if(fir >= last && fir >= mid) {
+   return fir;
+   }
+   }
 }
 
 function middle(values) {
-  // write your code here
+  let blankArray = [];
+  if (values == undefined ||  values.length < 3 || values.length%2 == 0 ){
+  return [];
+  }
+
+  else {
+  let middle = values[values.length - (Math.ceil(values.length / 2))]
+  let secondMiddle = values[(values.length - 1) - (Math.ceil(values.length / 2))]
+
+  blankArray.push(secondMiddle, middle)
+
+  return blankArray;
+  }
 }
 
 function increasing(numbers) {
