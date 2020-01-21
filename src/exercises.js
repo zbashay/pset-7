@@ -61,8 +61,6 @@ function max(number) {
   }
 }
 
-
-
 function middle(values) {
   if (!values || values.length === 0 || values.length < 3 || values.length % 2 === 0) {
     return [];
